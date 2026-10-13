@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="25098" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nav-root">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="25073"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="nav-scene">
+            <objects>
+                <navigationController id="nav-root" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nav-bar">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="home-vc" kind="relationship" relationship="rootViewController" id="nav-home"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nav-first" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1691" y="-673"/>
+        </scene>
+        <!--FoundIt-->
+        <scene sceneID="home-scene">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="home-vc" customClass="HomeViewController" customModule="FoundIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="home-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="FoundIt" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="home-title">
+                                <rect key="frame" x="24" y="212" width="345" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Lost something? Found something?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="home-subtitle">
+                                <rect key="frame" x="24" y="260.66666666666669" width="345" height="19.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="LOST ITEMS" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lost-caption">
+                                <rect key="frame" x="30" y="328" width="78" height="15.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lost-count">
+                                <rect key="frame" x="30" y="347.66666666666669" width="78" height="38.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="FOUND ITEMS" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="found-caption">
+                                <rect key="frame" x="272.66666666666669" y="328" width="90.333333333333314" height="15.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="found-count">
+                                <rect key="frame" x="272.66666666666669" y="347.66666666666669" width="90.333333333333314" height="38.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="view-reports">
+                                <rect key="frame" x="24" y="436" width="345" height="54"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="reports-height"/>
+                                </constraints>
+                                <state key="normal" title="View All Reports">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewReportsTapped:" destination="home-vc" eventType="touchUpInside" id="reports-action"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="report-item">
+                                <rect key="frame" x="24" y="504" width="345" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="report-height"/>
+                                </constraints>
+                                <state key="normal" title="＋  Report an Item"/>
+                                <connections>
+                                    <action selector="reportItemTapped:" destination="home-vc" eventType="touchUpInside" id="report-action"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="home-safe"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="home-title" firstAttribute="top" secondItem="home-safe" secondAttribute="top" constant="40" id="h1"/>
+                            <constraint firstItem="found-caption" firstAttribute="trailing" secondItem="home-safe" secondAttribute="trailing" constant="-30" id="h10"/>
+                            <constraint firstItem="lost-count" firstAttribute="top" secondItem="lost-caption" secondAttribute="bottom" constant="4" id="h11"/>
+                            <constraint firstItem="lost-count" firstAttribute="leading" secondItem="lost-caption" secondAttribute="leading" id="h12"/>
+                            <constraint firstItem="lost-count" firstAttribute="trailing" secondItem="lost-caption" secondAttribute="trailing" id="h13"/>
+                            <constraint firstItem="found-count" firstAttribute="top" secondItem="found-caption" secondAttribute="bottom" constant="4" id="h14"/>
+                            <constraint firstItem="found-count" firstAttribute="leading" secondItem="found-caption" secondAttribute="leading" id="h15"/>
+                            <constraint firstItem="found-count" firstAttribute="trailing" secondItem="found-caption" secondAttribute="trailing" id="h16"/>
+                            <constraint firstItem="view-reports" firstAttribute="top" secondItem="lost-count" secondAttribute="bottom" constant="50" id="h17"/>
+                            <constraint firstItem="view-reports" firstAttribute="leading" secondItem="home-safe" secondAttribute="leading" constant="24" id="h18"/>
+                            <constraint firstItem="view-reports" firstAttribute="trailing" secondItem="home-safe" secondAttribute="trailing" constant="-24" id="h19"/>
+                            <constraint firstItem="home-title" firstAttribute="leading" secondItem="home-safe" secondAttribute="leading" constant="24" id="h2"/>
+                            <constraint firstItem="report-item" firstAttribute="top" secondItem="view-reports" secondAttribute="bottom" constant="14" id="h20"/>
+                            <constraint firstItem="report-item" firstAttribute="leading" secondItem="view-reports" secondAttribute="leading" id="h21"/>
+                            <constraint firstItem="report-item" firstAttribute="trailing" secondItem="view-reports" secondAttribute="trailing" id="h22"/>
+                            <constraint firstItem="home-title" firstAttribute="trailing" secondItem="home-safe" secondAttribute="trailing" constant="-24" id="h3"/>
+                            <constraint firstItem="home-subtitle" firstAttribute="top" secondItem="home-title" secondAttribute="bottom" constant="8" id="h4"/>
+                            <constraint firstItem="home-subtitle" firstAttribute="leading" secondItem="home-title" secondAttribute="leading" id="h5"/>
+                            <constraint firstItem="home-subtitle" firstAttribute="trailing" secondItem="home-title" secondAttribute="trailing" id="h6"/>
+                            <constraint firstItem="lost-caption" firstAttribute="top" secondItem="home-subtitle" secondAttribute="bottom" constant="48" id="h7"/>
+                            <constraint firstItem="lost-caption" firstAttribute="leading" secondItem="home-safe" secondAttribute="leading" constant="30" id="h8"/>
+                            <constraint firstItem="found-caption" firstAttribute="top" secondItem="lost-caption" secondAttribute="top" id="h9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="FoundIt" id="home-nav"/>
+                    <connections>
+                        <outlet property="foundCountLabel" destination="found-count" id="found-outlet"/>
+                        <outlet property="lostCountLabel" destination="lost-count" id="lost-outlet"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="home-first" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-366" y="33"/>
+        </scene>
+        <!--Lost & Found-->
+        <scene sceneID="items-scene">
+            <objects>
+                <tableViewController storyboardIdentifier="ItemsViewController" id="items-vc" customClass="ItemsViewController" customModule="FoundIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" contentMode="scaleToFill" dataMode="prototypes" style="plain" rowHeight="84" estimatedRowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" id="items-table">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemTableViewCell" rowHeight="84" id="item-cell" customClass="ItemTableViewCell" customModule="FoundIt" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="item-cell" id="item-content">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="84"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Item name" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cell-title">
+                                            <rect key="frame" x="16" y="10" width="361" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Lost • Library" lineBreakMode="tailTruncation" numberOfLines="2" translatesAutoresizingMaskIntoConstraints="NO" id="cell-detail">
+                                            <rect key="frame" x="16" y="36" width="361" height="32"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Open" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cell-status">
+                                            <rect key="frame" x="16" y="66" width="31" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cell-title" firstAttribute="top" secondItem="item-content" secondAttribute="top" constant="10" id="c1"/>
+                                        <constraint firstItem="cell-title" firstAttribute="leading" secondItem="item-content" secondAttribute="leading" constant="16" id="c2"/>
+                                        <constraint firstItem="cell-title" firstAttribute="trailing" secondItem="item-content" secondAttribute="trailing" constant="-16" id="c3"/>
+                                        <constraint firstItem="cell-detail" firstAttribute="top" secondItem="cell-title" secondAttribute="bottom" constant="4" id="c4"/>
+                                        <constraint firstItem="cell-detail" firstAttribute="leading" secondItem="cell-title" secondAttribute="leading" id="c5"/>
+                                        <constraint firstItem="cell-detail" firstAttribute="trailing" secondItem="cell-title" secondAttribute="trailing" id="c6"/>
+                                        <constraint firstItem="cell-status" firstAttribute="top" secondItem="cell-detail" secondAttribute="bottom" constant="2" id="c7"/>
+                                        <constraint firstItem="cell-status" firstAttribute="leading" secondItem="cell-title" secondAttribute="leading" id="c8"/>
+                                        <constraint firstItem="cell-status" firstAttribute="bottom" secondItem="item-content" secondAttribute="bottom" constant="-6" id="c9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detailLabel" destination="cell-detail" id="cell-detail-outlet"/>
+                                    <outlet property="itemTitleLabel" destination="cell-title" id="cell-title-outlet"/>
+                                    <outlet property="statusLabel" destination="cell-status" id="cell-status-outlet"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lost &amp; Found" id="items-nav"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="items-first" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1314" y="33"/>
+        </scene>
+        <!--Report an Item-->
+        <scene sceneID="form-scene">
+            <objects>
+                <viewController storyboardIdentifier="AddEditItemViewController" id="form-vc" customClass="AddEditItemViewController" customModule="FoundIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="form-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Item name" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="name-label">
+                                <rect key="frame" x="24" y="138" width="345" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Blue water bottle" translatesAutoresizingMaskIntoConstraints="NO" id="name-field">
+                                <rect key="frame" x="24" y="159" width="345" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nf-height"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Description" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="desc-label">
+                                <rect key="frame" x="24" y="219" width="345" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="desc-view">
+                                <rect key="frame" x="24" y="240" width="345" height="100"/>
+                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="desc-height"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Location" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="location-label">
+                                <rect key="frame" x="24" y="354" width="345" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. College library" translatesAutoresizingMaskIntoConstraints="NO" id="location-field">
+                                <rect key="frame" x="24" y="375" width="345" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="lf-height"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Report type" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="type-label">
+                                <rect key="frame" x="24" y="435" width="345" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="type-control">
+                                <rect key="frame" x="24" y="456" width="345" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="tc-height"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Lost"/>
+                                    <segment title="Found"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Status" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="status-label">
+                                <rect key="frame" x="24" y="508" width="345" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="status-control">
+                                <rect key="frame" x="24" y="529" width="345" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="sc-height"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Open"/>
+                                    <segment title="Returned"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="save-button">
+                                <rect key="frame" x="24" y="589" width="345" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="sb-height"/>
+                                </constraints>
+                                <state key="normal" title="Save Report">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveTapped:" destination="form-vc" eventType="touchUpInside" id="save-action"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="form-safe"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="name-label" firstAttribute="top" secondItem="form-safe" secondAttribute="top" constant="20" id="f1"/>
+                            <constraint firstItem="desc-view" firstAttribute="top" secondItem="desc-label" secondAttribute="bottom" constant="4" id="f10"/>
+                            <constraint firstItem="desc-view" firstAttribute="leading" secondItem="name-label" secondAttribute="leading" id="f11"/>
+                            <constraint firstItem="desc-view" firstAttribute="trailing" secondItem="name-label" secondAttribute="trailing" id="f12"/>
+                            <constraint firstItem="location-label" firstAttribute="top" secondItem="desc-view" secondAttribute="bottom" constant="14" id="f13"/>
+                            <constraint firstItem="location-label" firstAttribute="leading" secondItem="name-label" secondAttribute="leading" id="f14"/>
+                            <constraint firstItem="location-label" firstAttribute="trailing" secondItem="name-label" secondAttribute="trailing" id="f15"/>
+                            <constraint firstItem="location-field" firstAttribute="top" secondItem="location-label" secondAttribute="bottom" constant="4" id="f16"/>
+                            <constraint firstItem="location-field" firstAttribute="leading" secondItem="name-label" secondAttribute="leading" id="f17"/>
+                            <constraint firstItem="location-field" firstAttribute="trailing" secondItem="name-label" secondAttribute="trailing" id="f18"/>
+                            <constraint firstItem="type-label" firstAttribute="top" secondItem="location-field" secondAttribute="bottom" constant="16" id="f19"/>
+                            <constraint firstItem="name-label" firstAttribute="leading" secondItem="form-safe" secondAttribute="leading" constant="24" id="f2"/>
+                            <constraint firstItem="type-label" firstAttribute="leading" secondItem="name-label" secondAttribute="leading" id="f20"/>
+                            <constraint firstItem="type-label" firstAttribute="trailing" secondItem="name-label" secondAttribute="trailing" id="f21"/>
+                            <constraint firstItem="type-control" firstAttribute="top" secondItem="type-label" secondAttribute="bottom" constant="4" id="f22"/>
+                            <constraint firstItem="type-control" firstAttribute="leading" secondItem="name-label" secondAttribute="leading" id="f23"/>
+                            <constraint firstItem="type-control" firstAttribute="trailing" secondItem="name-label" secondAttribute="trailing" id="f24"/>
+                            <constraint firstItem="status-label" firstAttribute="top" secondItem="type-control" secondAttribute="bottom" constant="16" id="f25"/>
+                            <constraint firstItem="status-label" firstAttribute="leading" secondItem="name-label" secondAttribute="leading" id="f26"/>
+                            <constraint firstItem="status-label" firstAttribute="trailing" secondItem="name-label" secondAttribute="trailing" id="f27"/>
+                            <constraint firstItem="status-control" firstAttribute="top" secondItem="status-label" secondAttribute="bottom" constant="4" id="f28"/>
+                            <constraint firstItem="status-control" firstAttribute="leading" secondItem="name-label" secondAttribute="leading" id="f29"/>
+                            <constraint firstItem="name-label" firstAttribute="trailing" secondItem="form-safe" secondAttribute="trailing" constant="-24" id="f3"/>
+                            <constraint firstItem="status-control" firstAttribute="trailing" secondItem="name-label" secondAttribute="trailing" id="f30"/>
+                            <constraint firstItem="save-button" firstAttribute="top" secondItem="status-control" secondAttribute="bottom" constant="24" id="f31"/>
+                            <constraint firstItem="save-button" firstAttribute="leading" secondItem="name-label" secondAttribute="leading" id="f32"/>
+                            <constraint firstItem="save-button" firstAttribute="trailing" secondItem="name-label" secondAttribute="trailing" id="f33"/>
+                            <constraint firstItem="name-field" firstAttribute="top" secondItem="name-label" secondAttribute="bottom" constant="4" id="f4"/>
+                            <constraint firstItem="name-field" firstAttribute="leading" secondItem="name-label" secondAttribute="leading" id="f5"/>
+                            <constraint firstItem="name-field" firstAttribute="trailing" secondItem="name-label" secondAttribute="trailing" id="f6"/>
+                            <constraint firstItem="desc-label" firstAttribute="top" secondItem="name-field" secondAttribute="bottom" constant="16" id="f7"/>
+                            <constraint firstItem="desc-label" firstAttribute="leading" secondItem="name-label" secondAttribute="leading" id="f8"/>
+                            <constraint firstItem="desc-label" firstAttribute="trailing" secondItem="name-label" secondAttribute="trailing" id="f9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Report an Item" id="form-nav"/>
+                    <connections>
+                        <outlet property="descriptionView" destination="desc-view" id="o2"/>
+                        <outlet property="locationField" destination="location-field" id="o3"/>
+                        <outlet property="nameField" destination="name-field" id="o1"/>
+                        <outlet property="saveButton" destination="save-button" id="o6"/>
+                        <outlet property="statusControl" destination="status-control" id="o5"/>
+                        <outlet property="typeControl" destination="type-control" id="o4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="form-first" id="form-first" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-785" y="-664"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.53333333333333333" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
